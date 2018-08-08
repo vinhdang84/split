@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import FriendManagement from "./FriendManagement";
+import MealManagement from "./MealManagement";
+import BalanceManagement from "./BalanceManagement";
 
 class App extends React.Component {
   state = {
@@ -7,7 +9,8 @@ class App extends React.Component {
     meals: [],
     friends: [],
     lineItemCounter: 0,
-    friendCounter: 0
+    friendCounter: 0,
+    mealCounter: 0
   };
 
   addFriend = friend => {
@@ -21,16 +24,40 @@ class App extends React.Component {
     });
   };
 
+  addMeal = meal => {
+    let counter = this.state.mealCounter + 1;
+    meal.id = counter;
+    let meals = Array.from(this.state.meals);
+    meals.push(meal);
+    this.setState({
+      mealCounter: counter,
+      meals: meals
+    });
+  };
+
+  addLineItem = lineItem => {
+    let counter = this.state.lineItemCounter + 1;
+    lineItem.id = counter;
+    let lineItems = Array.from(this.state.lineItems);
+    lineItems.push(lineItem);
+    this.setState({
+      lineItemCounter: counter,
+      lineItems: lineItems
+    });
+  };
+
   render() {
     return (
-      <Fragment>
-        <div>
-          <div>
-            <FriendManagement addFriend={this.addFriend} />
-          </div>
-          <div>hi</div>
-        </div>
-      </Fragment>
+      <div>
+        <FriendManagement addFriend={this.addFriend} />
+        <MealManagement
+          addMeal={this.addMeal}
+          meals={this.state.meals}
+          friends={this.state.friends}
+          lineItems={this.state.lineItems}
+        />
+        <BalanceManagement />
+      </div>
     );
   }
 }
