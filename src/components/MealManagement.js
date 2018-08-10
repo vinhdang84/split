@@ -6,6 +6,7 @@ class MealManagement extends React.Component {
   render() {
     return (
       <div>
+        <h3>&emsp;Meal Management </h3>
         <MealList
           meals={this.props.meals}
           friends={this.props.friends}

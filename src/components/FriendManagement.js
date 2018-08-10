@@ -5,7 +5,7 @@ class FriendManagement extends React.Component {
   render() {
     return (
       <div>
-        <b> Create List of Friends</b>
+        <h3> &emsp;Friend Management</h3>
         <AddFriend addFriend={this.props.addFriend} />
       </div>
     );

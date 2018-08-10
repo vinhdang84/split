@@ -4,7 +4,7 @@ class BalanceManagement extends React.Component {
   render() {
     return (
       <div>
-        <b>Balance Management</b>
+        <h3>&emsp;Balance Management</h3>
       </div>
     );
   }

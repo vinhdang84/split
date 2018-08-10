@@ -35,17 +35,6 @@ class App extends React.Component {
     });
   };
 
-  addLineItem = lineItem => {
-    let counter = this.state.lineItemCounter + 1;
-    lineItem.id = counter;
-    let lineItems = Array.from(this.state.lineItems);
-    lineItems.push(lineItem);
-    this.setState({
-      lineItemCounter: counter,
-      lineItems: lineItems
-    });
-  };
-
   render() {
     return (
       <div>
