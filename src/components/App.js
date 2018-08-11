@@ -5,12 +5,11 @@ import BalanceManagement from "./BalanceManagement";
 
 class App extends React.Component {
   state = {
-    lineItems: [],
-    meals: [],
     friends: [],
-    lineItemCounter: 0,
     friendCounter: 0,
-    mealCounter: 0
+
+    meals: [],
+    mealCounter: 0,
   };
 
   addFriend = friend => {
@@ -40,10 +39,9 @@ class App extends React.Component {
       <div>
         <FriendManagement addFriend={this.addFriend} />
         <MealManagement
-          addMeal={this.addMeal}
-          meals={this.state.meals}
           friends={this.state.friends}
-          lineItems={this.state.lineItems}
+          meals={this.state.meals}
+          addMeal={this.addMeal}
         />
         <BalanceManagement />
       </div>

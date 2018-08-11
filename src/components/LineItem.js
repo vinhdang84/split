@@ -1,32 +1,32 @@
 import React from "react";
 
-class AddLineItem extends React.Component {
+class LineItem extends React.Component {
   itemNameRef = React.createRef();
   priceRef = React.createRef();
   consumerRef = React.createRef();
 
-  handleChange = event => {
-    this.consumerRef = [].filter
-      .call(event.target.options, o => o.selected)
-      .map(o => o.value);
-    console.log(this.consumerRef);
-  };
+  // handleChange = event => {
+  //   this.consumerRef = [].filter
+  //     .call(event.target.options, o => o.selected)
+  //     .map(o => o.value);
+  // };
 
-  createLineItem = event => {
+  saveItem = event => {
     event.preventDefault();
+
     const lineItem = {
       itemName: this.itemNameRef.value.value,
       price: parseFloat(this.priceRef.value.value),
-      consumer: this.consumerRef
+      consumer: this.consumerRef.value.value
     };
 
-    this.props.addLineItem(lineItem);
-    event.currentTarget.reset();
+    this.props.setItem(this.props.itemId, lineItem);
   };
+
   render() {
     const { friends } = this.props;
     return (
-      <form onSubmit={this.createLineItem}>
+      <div>
         Line Item
         <input
           name="itemName"
@@ -46,17 +46,17 @@ class AddLineItem extends React.Component {
           multiple={true}
           name="consumer"
           ref={this.consumerRef}
-          onChange={this.handleChange}>
+        >
           {(friends || []).map((f, i) => (
             <option key={i} value={f.name}>
               {f.name}
             </option>
           ))}
         </select>
-        <button type="submit"> Submit Line Item </button>
-      </form>
+        <button onClick={this.saveItem.bind(this)}>Save</button>
+      </div>
     );
   }
 }
 
-export default AddLineItem;
+export default LineItem;

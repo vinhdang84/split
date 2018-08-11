@@ -1,36 +1,49 @@
 import React from "react";
-import AddLineItem from "./AddLineItem";
+import LineItem from "./LineItem";
 
 class MealEditor extends React.Component {
   state = {
-    isHidden: true
-  };
-
-  onClickHandler = () => {
-    this.setState(prev => ({ isHidden: !prev.isHidden }));
+    lineItems: []
   };
 
   payerRef = React.createRef();
   descRef = React.createRef();
-  itemNameRef = React.createRef();
-  priceRef = React.createRef();
-  consumerRef = React.createRef();
 
   createMeal = event => {
     event.preventDefault();
-    const lineItemgroup = {
-      itemName: this.itemNameRef.value.value,
-      price: this.priceRef.value.value,
-      consumer: this.consumerRef.value.value
-    };
+
     const meal = {
       payer: this.payerRef.value.value,
       desc: this.descRef.value.value,
-      lineItem: lineItemgroup
+      lineItems: this.state.lineItems,
     };
+
     this.props.addMeal(meal);
     event.currentTarget.reset();
   };
+
+  setItem = (index, item) => {
+    const lineItems = this.state.lineItems;
+    lineItems[index].itemName = item.itemName;
+    lineItems[index].consumer = item.consumer;
+    lineItems[index].price = item.price;
+
+    this.setState({ lineItems: lineItems });
+  }
+
+  addLineItem = (event) => {
+    event.preventDefault();
+
+    let lineItems = this.state.lineItems;
+    lineItems.push({
+      id: lineItems.length + 1,
+      itemName: '',
+      consumer: '',
+      price: '',
+    });
+
+    this.setState({ lineItems: lineItems });
+  }
 
   render() {
     const { friends } = this.props;
@@ -53,33 +66,15 @@ class MealEditor extends React.Component {
             type="text"
             placeholder="Meal Description"
           />
-          Line Item
-          <input
-            name="itemName"
-            ref={this.itemNameRef}
-            type="text"
-            placeholder="Item name"
-          />
-          Price
-          <input
-            name="price"
-            ref={this.priceRef}
-            type="text"
-            placeholder="Price"
-          />
-          Consumers
-          <select
-            multiple={true}
-            name="consumer"
-            ref={this.consumerRef}
-            onChange={this.handleChange}>
-            {(friends || []).map((f, i) => (
-              <option key={i} value={f.name}>
-                {f.name}
-              </option>
-            ))}
-          </select>
-          <button type="submit">Save Meal Button</button>
+          <div>
+            <button onClick={this.addLineItem.bind(this)}>Add Line Item</button>
+            {
+              this.state.lineItems.map((item, index) => <LineItem itemId={index} key={index} setItem={this.setItem.bind(this)} friends={this.props.friends} />)
+            }
+          </div>
+          <div>
+            <button type="submit">Save Meal Button</button>
+          </div>
         </form>
       </div>
     );

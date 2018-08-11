@@ -8,16 +8,12 @@ class MealManagement extends React.Component {
       <div>
         <h3>&emsp;Meal Management </h3>
         <MealList
-          meals={this.props.meals}
           friends={this.props.friends}
-          lineItems={this.props.lineItems}
+          meals={this.props.meals}
         />
-        <button>Add Meal button</button>
         <MealEditor
-          addMeal={this.props.addMeal}
-          meals={this.props.meals}
           friends={this.props.friends}
-          lineItems={this.props.lineItems}
+          addMeal={this.props.addMeal}
         />
       </div>
     );
