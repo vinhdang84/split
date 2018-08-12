@@ -3,8 +3,7 @@ import LineItem from "./LineItem";
 
 class MealEditor extends React.Component {
   state = {
-    lineItems: [],
-    lineItemCounter: 0
+    lineItems: []
   };
 
   payerRef = React.createRef();
@@ -26,21 +25,12 @@ class MealEditor extends React.Component {
   setItem = (key, updatedLineItem) => {
     const lineItems = { ...this.state.lineItems };
     lineItems[key] = updatedLineItem;
-    this.setState({ lineItems });
+    this.setState({ lineItems: lineItems });
   };
 
-  addLineItem = event => {
-    event.preventDefault();
-
-    const lineItems = this.state.lineItems;
-    lineItems.push({
-      itemName: "",
-      consumer: "",
-      price: ""
-    });
-
-    this.setState({ lineItems });
-  };
+  addLineItem() {
+    this.setState(prevState => ({ lineItems: [...prevState.lineItems, ""] }));
+  }
 
   render() {
     const { friends } = this.props;
@@ -64,7 +54,11 @@ class MealEditor extends React.Component {
             placeholder="Meal Description"
           />
           <div>
-            <button onClick={this.addLineItem.bind(this)}>Add Line Item</button>
+            <input
+              type="button"
+              value="add more"
+              onClick={this.addLineItem.bind(this)}
+            />
             {Object.keys(this.state.lineItems).map(key => (
               <LineItem
                 key={key}
