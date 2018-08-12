@@ -3,7 +3,8 @@ import LineItem from "./LineItem";
 
 class MealEditor extends React.Component {
   state = {
-    lineItems: []
+    lineItems: [],
+    lineItemCounter: 0
   };
 
   payerRef = React.createRef();
@@ -15,35 +16,31 @@ class MealEditor extends React.Component {
     const meal = {
       payer: this.payerRef.value.value,
       desc: this.descRef.value.value,
-      lineItems: this.state.lineItems,
+      lineItems: this.state.lineItems
     };
 
     this.props.addMeal(meal);
     event.currentTarget.reset();
   };
 
-  setItem = (index, item) => {
-    const lineItems = this.state.lineItems;
-    lineItems[index].itemName = item.itemName;
-    lineItems[index].consumer = item.consumer;
-    lineItems[index].price = item.price;
+  setItem = (key, updatedLineItem) => {
+    const lineItems = { ...this.state.lineItems };
+    lineItems[key] = updatedLineItem;
+    this.setState({ lineItems });
+  };
 
-    this.setState({ lineItems: lineItems });
-  }
-
-  addLineItem = (event) => {
+  addLineItem = event => {
     event.preventDefault();
 
-    let lineItems = this.state.lineItems;
+    const lineItems = this.state.lineItems;
     lineItems.push({
-      id: lineItems.length + 1,
-      itemName: '',
-      consumer: '',
-      price: '',
+      itemName: "",
+      consumer: "",
+      price: ""
     });
 
-    this.setState({ lineItems: lineItems });
-  }
+    this.setState({ lineItems });
+  };
 
   render() {
     const { friends } = this.props;
@@ -68,9 +65,15 @@ class MealEditor extends React.Component {
           />
           <div>
             <button onClick={this.addLineItem.bind(this)}>Add Line Item</button>
-            {
-              this.state.lineItems.map((item, index) => <LineItem itemId={index} key={index} setItem={this.setItem.bind(this)} friends={this.props.friends} />)
-            }
+            {Object.keys(this.state.lineItems).map(key => (
+              <LineItem
+                key={key}
+                index={key}
+                lineItem={this.state.lineItems[key]}
+                setItem={this.setItem.bind(this)}
+                friends={this.props.friends}
+              />
+            ))}
           </div>
           <div>
             <button type="submit">Save Meal Button</button>

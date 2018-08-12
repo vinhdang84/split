@@ -9,7 +9,7 @@ class App extends React.Component {
     friendCounter: 0,
 
     meals: [],
-    mealCounter: 0,
+    mealCounter: 0
   };
 
   addFriend = friend => {
