@@ -23,14 +23,14 @@ class MealEditor extends React.Component {
   };
 
   setItem = (key, updatedLineItem) => {
-    const lineItems = { ...this.state.lineItems };
+    const lineItems = [...this.state.lineItems];
     lineItems[key] = updatedLineItem;
     this.setState({ lineItems: lineItems });
   };
 
-  addLineItem() {
-    this.setState(prevState => ({ lineItems: [...prevState.lineItems, ""] }));
-  }
+  addLineItem = () => {
+    this.setState(prevState => ({ lineItems: [...prevState.lineItems, {}] }));
+  };
 
   render() {
     const { friends } = this.props;
@@ -56,7 +56,7 @@ class MealEditor extends React.Component {
           <div>
             <input
               type="button"
-              value="add more"
+              value="Add Line Item"
               onClick={this.addLineItem.bind(this)}
             />
             {Object.keys(this.state.lineItems).map(key => (
