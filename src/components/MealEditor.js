@@ -3,7 +3,8 @@ import LineItem from "./LineItem";
 
 class MealEditor extends React.Component {
   state = {
-    lineItems: []
+    lineItems: [],
+    lineItemCounter: 0
   };
 
   payerRef = React.createRef();
@@ -19,6 +20,7 @@ class MealEditor extends React.Component {
     };
 
     this.props.addMeal(meal);
+    this.setState({ lineItems: [] });
     event.currentTarget.reset();
   };
 

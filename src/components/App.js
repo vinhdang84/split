@@ -43,7 +43,11 @@ class App extends React.Component {
           meals={this.state.meals}
           addMeal={this.addMeal}
         />
-        <BalanceManagement />
+        <BalanceManagement
+          friends={this.state.friends}
+          meals={this.state.meals}
+          addMeal={this.addMeal}
+        />
       </div>
     );
   }

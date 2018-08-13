@@ -1,10 +1,14 @@
 import React from "react";
 
 class BalanceManagement extends React.Component {
+  state = {
+    groupBalance: []
+  };
+
   render() {
     return (
       <div>
-        <h3>&emsp;Balance Management</h3>
+        <h4>List of Meals</h4>
       </div>
     );
   }

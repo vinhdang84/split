@@ -5,6 +5,18 @@ class LineItem extends React.Component {
   priceRef = React.createRef();
   consumerRef = React.createRef();
 
+  saveConsumer = event => {
+    this.consumerRef = [].filter
+      .call(event.target.options, o => o.selected)
+      .map(o => o.value);
+    console.log(this.consumerRef);
+    const updatedLineItem = {
+      ...this.props.lineItem,
+      [event.currentTarget.name]: this.consumerRef
+    };
+    this.props.setItem(this.props.index, updatedLineItem);
+  };
+
   saveItem = event => {
     console.log(event.currentTarget.value);
     const updatedLineItem = {
@@ -39,7 +51,7 @@ class LineItem extends React.Component {
           multiple={true}
           name="consumer"
           ref={this.consumerRef}
-          onChange={this.saveItem}>
+          onChange={this.saveConsumer}>
           {(friends || []).map((f, i) => (
             <option key={i} value={f.name}>
               {f.name}
