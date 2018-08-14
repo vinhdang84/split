@@ -29,35 +29,44 @@ class LineItem extends React.Component {
   render() {
     const { friends } = this.props;
     return (
-      <div>
-        Line Item
-        <input
-          name="itemName"
-          ref={this.itemNameRef}
-          type="text"
-          placeholder="Item name"
-          onChange={this.saveItem}
-        />
-        Price
-        <input
-          name="price"
-          ref={this.priceRef}
-          type="text"
-          placeholder="Price"
-          onChange={this.saveItem}
-        />
-        Consumers
-        <select
-          multiple={true}
-          name="consumer"
-          ref={this.consumerRef}
-          onChange={this.saveConsumer}>
-          {(friends || []).map((f, i) => (
-            <option key={i} value={f.name}>
-              {f.name}
-            </option>
-          ))}
-        </select>
+      <div class="form-row">
+        <br />
+        <div class="col">
+          LineItem
+          <input
+            name="itemName"
+            ref={this.itemNameRef}
+            type="text"
+            placeholder="Item name"
+            onChange={this.saveItem}
+          />
+        </div>
+        <div class="col">
+          Price
+          <input
+            name="price"
+            ref={this.priceRef}
+            type="text"
+            placeholder="Price"
+            onChange={this.saveItem}
+          />
+        </div>
+        <div class="col">
+          <div class="row"> Consumers</div>
+          <div class="row">
+            <select
+              multiple={true}
+              name="consumer"
+              ref={this.consumerRef}
+              onChange={this.saveConsumer}>
+              {(friends || []).map((f, i) => (
+                <option key={i} value={f.name}>
+                  {f.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       </div>
     );
   }

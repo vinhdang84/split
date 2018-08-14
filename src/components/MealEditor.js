@@ -32,36 +32,58 @@ class MealEditor extends React.Component {
 
   addLineItem = () => {
     const { friends } = this.props;
-    this.setState(prevState => ({ lineItems: [...prevState.lineItems, friends.length > 0 && { consumer: friends[0].name }] }));
+    this.setState(prevState => ({
+      lineItems: [
+        ...prevState.lineItems,
+        friends.length > 0 && { consumer: friends[0].name }
+      ]
+    }));
   };
 
   render() {
     const { friends } = this.props;
     return (
       <div>
-        <h4>Meal Editor</h4>
+        <h4>Add A Meal</h4>
         <form onSubmit={this.createMeal}>
-          <i>Payer</i>
-          <select name="payer" ref={this.payerRef}>
-            {(friends || []).map((f, i) => (
-              <option key={i} value={f.name}>
-                {f.name}
-              </option>
-            ))}
-          </select>
-          Description
-          <input
-            name="desc"
-            ref={this.descRef}
-            type="text"
-            placeholder="Meal Description"
-          />
-          <div>
-            <input
-              type="button"
-              value="Add Line Item"
-              onClick={this.addLineItem.bind(this)}
-            />
+          <div class="col">
+            <div class="row">
+              <span class="font-weight-bold">Payer:</span>
+            </div>
+            <div class="row">
+              <select name="payer" ref={this.payerRef}>
+                {(friends || []).map((f, i) => (
+                  <option key={i} value={f.name}>
+                    {f.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <br />
+          <div class="col">
+            <div class="row">
+              <span class="font-weight-bold">Description:</span>
+            </div>
+            <div class="row">
+              <input
+                name="desc"
+                ref={this.descRef}
+                type="text"
+                placeholder="Meal Description"
+              />
+            </div>
+            <br />
+          </div>
+          <div class="col">
+            <div class="row">
+              <input
+                type="button"
+                className="btn-success"
+                value="Add Line Item"
+                onClick={this.addLineItem.bind(this)}
+              />
+            </div>
             {Object.keys(this.state.lineItems).map(key => (
               <LineItem
                 key={key}
@@ -73,8 +95,11 @@ class MealEditor extends React.Component {
               />
             ))}
           </div>
+          <br />
           <div>
-            <button type="submit">Save Meal Button</button>
+            <button type="submit" className="btn btn-primary btn-lg btn-block">
+              Save Meal Button
+            </button>
           </div>
         </form>
       </div>

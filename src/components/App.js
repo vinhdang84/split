@@ -36,19 +36,29 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <FriendManagement addFriend={this.addFriend} />
-        <MealManagement
-          friends={this.state.friends}
-          meals={this.state.meals}
-          addMeal={this.addMeal}
-        />
-        <BalanceManagement
-          friends={this.state.friends}
-          meals={this.state.meals}
-          addMeal={this.addMeal}
-        />
-      </div>
+      <Fragment>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <FriendManagement addFriend={this.addFriend} />
+            </div>
+            <div class="col-7">
+              <MealManagement
+                friends={this.state.friends}
+                meals={this.state.meals}
+                addMeal={this.addMeal}
+              />
+            </div>
+            <div class="col">
+              <BalanceManagement
+                friends={this.state.friends}
+                meals={this.state.meals}
+                addMeal={this.addMeal}
+              />
+            </div>
+          </div>
+        </div>
+      </Fragment>
     );
   }
 }
