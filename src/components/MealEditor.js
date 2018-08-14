@@ -31,7 +31,8 @@ class MealEditor extends React.Component {
   };
 
   addLineItem = () => {
-    this.setState(prevState => ({ lineItems: [...prevState.lineItems, {}] }));
+    const { friends } = this.props;
+    this.setState(prevState => ({ lineItems: [...prevState.lineItems, friends.length > 0 && { consumer: friends[0].name }] }));
   };
 
   render() {
@@ -68,6 +69,7 @@ class MealEditor extends React.Component {
                 lineItem={this.state.lineItems[key]}
                 setItem={this.setItem.bind(this)}
                 friends={this.props.friends}
+                payer={this.payerRef.value.value}
               />
             ))}
           </div>
