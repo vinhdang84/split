@@ -1,6 +1,6 @@
 {
-  "name": "cotd",
-  "version": "0.0.3",
+  "name": "bill-split",
+  "version": "1.0",
   "private": true,
   "devDependencies": {
     "concurrently": "3.5.1",
