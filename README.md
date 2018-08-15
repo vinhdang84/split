@@ -108,17 +108,19 @@ LineItem: Burger                Price: $12   Consumer:  Maria
 
 12. Balance shall now show: 
 ```
-Karen: {
-  Maria: $10.75
-  Chad: $30
-  Tony: $11
-  Aliza: $25
-  Apurva: $11
-}
-Maria: {
-  Aliza: $11.25
-  Tony: $3.75
+{
+  "Maria": {
+    "Aliza": "$11.25",
+    "Tony": "$3.75"
+  },
+  "Karen": {
+    "Tony": "$11",
+    "Apurva": "$11",
+    "Maria": "$15.75",
+    "Chad": "$30",
+    "Aliza": "$15"
   }
+}
 ```
 
 ## Running the tests
