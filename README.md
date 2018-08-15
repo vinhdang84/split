@@ -19,7 +19,7 @@ Live Site available at http://bill-split.s3-website-us-west-1.amazonaws.com/
 
 ### Prerequisites
 To install and run locally for Mac: 
-You'll need XCode, Homebrew, and NodeJS, and npm
+You'll need XCode, Homebrew, and NodeJS, and NPM version 5.6
 
 XCode is free and you can find it in the 
 [Apple App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
