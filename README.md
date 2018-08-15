@@ -111,7 +111,6 @@ Karen: {
   Maria: $10.75
   Chad: $30
   Tony: $11
-
   Aliza: $25
   Apurva: $11
 }
