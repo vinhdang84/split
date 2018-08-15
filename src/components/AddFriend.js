@@ -22,7 +22,9 @@ class AddFriend extends React.Component {
           type="text"
           placeholder="Enter Name"
         />
-        <button type="submit">+ Add Friend</button>
+        <button type="submit" class="btn btn-primary">
+          + Add Friend
+        </button>
       </form>
     );
   }

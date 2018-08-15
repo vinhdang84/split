@@ -24,7 +24,7 @@ class MealList extends React.Component {
 
     return (
       <div>
-        <h4>List of Meals</h4>
+        <h4 class="card-header">List of Meals</h4>
         {meals}
       </div>
     );

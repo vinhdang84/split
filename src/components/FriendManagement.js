@@ -5,10 +5,10 @@ class FriendManagement extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <h3> &emsp;Add Friend</h3>
-          <AddFriend addFriend={this.props.addFriend} />
-        </div>
+        <h3 class="text-center" class="card-header">
+          Add Friend
+        </h3>
+        <AddFriend addFriend={this.props.addFriend} />
       </div>
     );
   }

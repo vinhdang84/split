@@ -40,21 +40,37 @@ class App extends React.Component {
         <div class="container">
           <div class="row">
             <div class="col">
-              <FriendManagement addFriend={this.addFriend} />
+              <div class="card-deck">
+                <div class="card">
+                  <div class="card-body">
+                    <FriendManagement addFriend={this.addFriend} />
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-7">
-              <MealManagement
-                friends={this.state.friends}
-                meals={this.state.meals}
-                addMeal={this.addMeal}
-              />
+              <div class="card-deck" />
+              <div class="card">
+                <div class="card-body">
+                  <MealManagement
+                    friends={this.state.friends}
+                    meals={this.state.meals}
+                    addMeal={this.addMeal}
+                  />
+                </div>
+              </div>
             </div>
             <div class="col">
-              <BalanceManagement
-                friends={this.state.friends}
-                meals={this.state.meals}
-                addMeal={this.addMeal}
-              />
+              <div class="card-deck" />
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <BalanceManagement
+                  friends={this.state.friends}
+                  meals={this.state.meals}
+                  addMeal={this.addMeal}
+                />
+              </div>
             </div>
           </div>
         </div>

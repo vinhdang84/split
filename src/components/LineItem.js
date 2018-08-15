@@ -30,9 +30,11 @@ class LineItem extends React.Component {
     const { friends } = this.props;
     return (
       <div class="form-row">
-        <br />
         <div class="col">
-          LineItem
+          <label class="control-label">
+            <br />
+            <b>LineItem:</b>
+          </label>
           <input
             name="itemName"
             ref={this.itemNameRef}
@@ -42,7 +44,11 @@ class LineItem extends React.Component {
           />
         </div>
         <div class="col">
-          Price
+          <div class="form-group-row" />
+          <label class="control-label">
+            <br />
+            <b>Price:</b>
+          </label>
           <input
             name="price"
             ref={this.priceRef}
@@ -52,9 +58,16 @@ class LineItem extends React.Component {
           />
         </div>
         <div class="col">
-          <div class="row"> Consumers</div>
-          <div class="row">
+          <div class="form-group-row">
+            {" "}
+            <label class="control-label">
+              <br />
+              <b>Consumers:</b>
+            </label>
+          </div>
+          <div class="form-group-row">
             <select
+              class="form-control"
               multiple={true}
               name="consumer"
               ref={this.consumerRef}

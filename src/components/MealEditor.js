@@ -44,14 +44,16 @@ class MealEditor extends React.Component {
     const { friends } = this.props;
     return (
       <div>
-        <h4>Add A Meal</h4>
+        <h4 class="card-header">Add Meal</h4>
         <form onSubmit={this.createMeal}>
-          <div class="col">
+          <div class="col-xl-3">
             <div class="row">
-              <span class="font-weight-bold">Payer:</span>
+              <label class="control-label">
+                <b>Payer:</b>
+              </label>
             </div>
             <div class="row">
-              <select name="payer" ref={this.payerRef}>
+              <select class="form-control" name="payer" ref={this.payerRef}>
                 {(friends || []).map((f, i) => (
                   <option key={i} value={f.name}>
                     {f.name}
@@ -63,7 +65,9 @@ class MealEditor extends React.Component {
           <br />
           <div class="col">
             <div class="row">
-              <span class="font-weight-bold">Description:</span>
+              <label class="control-label">
+                <b>Description:</b>
+              </label>
             </div>
             <div class="row">
               <input
@@ -98,7 +102,7 @@ class MealEditor extends React.Component {
           <br />
           <div>
             <button type="submit" className="btn btn-primary btn-lg btn-block">
-              Save Meal Button
+              Save Meal
             </button>
           </div>
         </form>
