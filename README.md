@@ -32,6 +32,7 @@ To install NodeJS and NPM, type `brew install node`
 ```
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 $ brew install node
+$ npm install -g npm@5.6.0
 ```
 
 
