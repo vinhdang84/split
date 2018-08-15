@@ -48,7 +48,7 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="col-7">
+            <div class="col-6">
               <div class="card-deck" />
               <div class="card">
                 <div class="card-body">
