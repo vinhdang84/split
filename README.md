@@ -22,7 +22,7 @@ To install and run locally for Mac:
 You'll need XCode, Homebrew, and NodeJS, and npm
 
 XCode is free and you can find it in the 
-[Apple_App_Store] (https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+[Apple App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
 Homebrew is a package manager for the Mac — it makes installing most open source sofware (like Node) as simple as writing brew install node. You can learn more about Homebrew at the Homebrew website. 
 To install Homebrew just open Terminal and type `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`.
@@ -142,7 +142,8 @@ Within the split folder that you installed the application in, run:
 `npm run build`
 
 Set up a free AWS S3 site. I used the following to set up the S3 bucket only
-[resource minus yarn] (https://hackernoon.com/how-to-deploy-a-live-reactjs-redux-website-in-under-10-minutes-cadf73cfc75a)
+
+[resource_minus_yarn](https://hackernoon.com/how-to-deploy-a-live-reactjs-redux-website-in-under-10-minutes-cadf73cfc75a)
 .
 
 Afterwards, I uploaded everything within the build folder into the s3 bucket.
@@ -151,7 +152,6 @@ Afterwards, I uploaded everything within the build folder into the s3 bucket.
 
 * [ReactJS](https://reactjs.org/) - a JavaScript library for building user interfaces.
 * [BootStrap](http://getbootstrap.com/) - Used to generate CSS 
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 
 
