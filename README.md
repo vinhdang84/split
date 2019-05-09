@@ -2,6 +2,56 @@
 
 App is available on http://bill-split.s3-website-us-west-1.amazonaws.com/
 
+
+# Prerequisite
+Imagine it’s Thanksgiving Holiday time. Your friends and family decided to have a Thanksgiving feast week this year. As fun as that sounds, you know the finances are going to get complicated -- everyone wants to make sure they’re on equal ground and not any one person is paying for everything by the end of the week. So, to solve this problem, you’re going to create an app that will automatically help you keep track of all the transactions that happen throughout the week and be able to tell everyone how much they owe to each person. 
+
+For Example:
+
+Brunch Receipt [Maria Paid for Bill]:
+French Toast: $15
+Aliza, Maria, Tony, Karen
+Eggs Benedict: $15
+Aliza, Karen
+
+If I check the App right now:
+Maria: {
+   Aliza: $11.25
+   Tony: $3.75
+   Karen:$11.25
+}
+
+Dinner Receipt [Karen Paid for Bill]:
+Classic Spaghetti: $12
+Apurva, Tony
+Calamari: $15
+Chad, Tony, Maria
+Baked Brussel Sprouts: $10
+Aliza, Apurva
+Lasagna: $15
+Chad
+Bottle of Wine: $40
+Aliza, Karen, Maria, Chad
+Burger: $12
+Maria
+
+If I check the App right now:
+Karen: {
+   Maria: $10.75
+   Chad: $30
+   Tony: $11
+   Aliza: $25
+   Apurva: $11
+}
+
+Maria: {
+   Aliza: $11.25
+   Tony: $3.75
+}
+
+
+
+
 # Split
 
 An app written in ReactJS and utilizing BootStrap to split bills with friends when a single person pays for a whole meal. 
