@@ -6,9 +6,9 @@ App is available on http://bill-split.s3-website-us-west-1.amazonaws.com/
 # Prerequisite
 Imagine it’s Thanksgiving Holiday time. Your friends and family decided to have a Thanksgiving feast week this year. As fun as that sounds, you know the finances are going to get complicated -- everyone wants to make sure they’re on equal ground and not any one person is paying for everything by the end of the week. So, to solve this problem, you’re going to create an app that will automatically help you keep track of all the transactions that happen throughout the week and be able to tell everyone how much they owe to each person. 
 
-For Example:
+## For Example:
 
-Brunch Receipt [Maria Paid for Bill]:
+### Brunch Receipt [Maria Paid for Bill]:
 
 French Toast: $15
 
@@ -18,7 +18,9 @@ Eggs Benedict: $15
 
 Aliza, Karen
 
-If I check the App right now:
+
+
+### If I check the App right now:
 
 Maria: {
 
@@ -31,7 +33,7 @@ Maria: {
 }
 
 
-Dinner Receipt [Karen Paid for Bill]:
+### Dinner Receipt [Karen Paid for Bill]:
 
 Classic Spaghetti: $12
 
@@ -58,7 +60,7 @@ Burger: $12
 Maria
 
 
-If I check the App right now:
+### If I check the App right now:
 
 Karen: {
 
