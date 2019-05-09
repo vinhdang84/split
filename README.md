@@ -9,44 +9,78 @@ Imagine it’s Thanksgiving Holiday time. Your friends and family decided to hav
 For Example:
 
 Brunch Receipt [Maria Paid for Bill]:
+
 French Toast: $15
+
 Aliza, Maria, Tony, Karen
+
 Eggs Benedict: $15
+
 Aliza, Karen
 
 If I check the App right now:
+
 Maria: {
+
    Aliza: $11.25
+   
    Tony: $3.75
+   
    Karen:$11.25
+   
 }
+
 
 Dinner Receipt [Karen Paid for Bill]:
+
 Classic Spaghetti: $12
+
 Apurva, Tony
+
 Calamari: $15
+
 Chad, Tony, Maria
+
 Baked Brussel Sprouts: $10
+
 Aliza, Apurva
+
 Lasagna: $15
+
 Chad
+
 Bottle of Wine: $40
+
 Aliza, Karen, Maria, Chad
+
 Burger: $12
+
 Maria
 
+
 If I check the App right now:
+
 Karen: {
+
    Maria: $10.75
+   
    Chad: $30
+   
    Tony: $11
+   
    Aliza: $25
+   
    Apurva: $11
+   
 }
 
+
 Maria: {
+
    Aliza: $11.25
+   
    Tony: $3.75
+   
 }
 
 
